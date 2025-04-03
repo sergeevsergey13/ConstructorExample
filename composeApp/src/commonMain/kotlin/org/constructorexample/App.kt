@@ -46,7 +46,7 @@ import kotlin.random.Random
 
 val blue = Color.Blue.copy(alpha = 0.5f)
 
-class DashedVisualTransformation : VisualTransformation {
+object DashedVisualTransformation : VisualTransformation {
     override fun filter(text: AnnotatedString): TransformedText {
         val transformedText = StringBuilder()
         val originalToTransformed = mutableListOf<Int>()
@@ -216,7 +216,7 @@ fun CTextInput(
                 .fillMaxWidth()
                 .border(2.dp, blue, RoundedCornerShape(8.dp)),
             maxLines = 1,
-            visualTransformation = if (isNumber) DashedVisualTransformation() else VisualTransformation.None,
+            visualTransformation = if (isNumber) DashedVisualTransformation else VisualTransformation.None,
             keyboardOptions = if (isNumber) KeyboardOptions(keyboardType = KeyboardType.Number) else KeyboardOptions.Default
         )
     }
