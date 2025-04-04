@@ -85,7 +85,7 @@ fun App() {
                 Spacer(Modifier.padding(16.dp))
             }
 
-            items(200) { index ->
+            items(40) { index ->
                 when {
                     index % 2 == 0 -> {
                         CollapsibleBlock()
